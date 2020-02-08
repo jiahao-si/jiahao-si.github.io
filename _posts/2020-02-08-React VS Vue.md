@@ -18,6 +18,7 @@ tags:
 -   使用 virtual dom
 -   提供了响应式和组件化的视图组件
 -   将注意力集中在核心库，将其他功能如路由和全局状态管理交给相关的库
+
 ---
 ####    不同点
 
@@ -61,7 +62,8 @@ tags:
         ```
 -   原生渲染
     -   React 有 React Native
-    -   Vue 和 Weex 合作
+    -   Vue 和 Weex 合作，Weex 已支持 Vue 语法
+    
 ---
 
 [参考Vue官方文档](https://cn.vuejs.org/v2/guide/comparison.html)
