@@ -2,7 +2,7 @@
 layout: post
 title: 使用MutationObserver跟踪DOM的变化
 subtitle: 使用MutationObserver跟踪DOM的变化
-date: 2019-02-07
+date: 2020-02-07
 author: nolan
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
