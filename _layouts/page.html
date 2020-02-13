@@ -111,6 +111,9 @@ layout: default
                             <p>{{site.sidebar-about-description}}</p>
                         {% endif %}
                         <!-- SNS Link -->
+                        <!-- 临时屏蔽简书、github账号等 -->
+                        {% if false %}
+
                         <ul class="list-inline">
                             {% if site.RSS %}
                             <li>
@@ -185,6 +188,8 @@ layout: default
                             {% endif %}
                             
                         </ul>
+                        {% endif %}
+                        <p>wechat： sijiahao1993</p>
                         {% if site.email %}
                             <p>✉️ {{site.email}}</p>
                         {% endif %}
