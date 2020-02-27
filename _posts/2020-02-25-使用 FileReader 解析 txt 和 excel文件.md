@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用 FileReader 解析 txt 和 excel文件.md
+title: 使用 FileReader 解析 txt 和 excel文件
 subtitle: FileReader、xlsl 解析库
 date: 2020-02-24
 author: nolan
