@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2020-03-17-React源码解读之packages_react.md
+title: React源码解读之packages_react.md
 subtitle: React源码解读之packages_react
 date: 2020-03-17
 author: nolan
