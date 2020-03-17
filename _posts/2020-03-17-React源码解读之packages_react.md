@@ -13,7 +13,8 @@ tags:
 ---
 
 >   React 代码主要逻辑都是在 Packages 这个文件夹下，今天我们来解读下这个文件夹下的 React 目录。
-###     一、React 
+
+###     React 
 
 ####    位置
 react.js
@@ -72,7 +73,7 @@ export {
 };
 ```
 
-###    二、react-element
+###    react-element
 
 ####    位置
 ReactElement.js
