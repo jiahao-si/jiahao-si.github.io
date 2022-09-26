@@ -5,9 +5,9 @@ SEOTitle: Nolan的博客 | Nolan Blog
 email: 545921090@qq.com
 description: 'Work hard, play hard!'
 keyword: 'Nolan Blog, Nolan的博客, 腾讯, 司加豪, js, JavaScript, 前端'
-url: 'http://nolan1230.github.io' # your host, for absolute URL
+url: 'https://jiahao-si.github.io./' # your host, for absolute URL
 baseurl: '' # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: 'https://github.com/nolan1230/nolan1230.github.io.git' # you code repository
+github_repo: 'https://github.com/jiahao-si/jiahao-si.github.io.git' # you code repository
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
