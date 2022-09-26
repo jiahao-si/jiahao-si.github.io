@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "About"
-description: "Hey, this is Nolan."
-header-img: "img/post-bg-rwd.jpg"
+title: 'About'
+description: 'Hey, this is Nolan.'
+header-img: 'img/post-bg-rwd.jpg'
 ---
 
 <!-- Language Selector -->
@@ -21,10 +21,11 @@ header-img: "img/post-bg-rwd.jpg"
     </p>
   </blockquote>
 
-  <p>Hey，我是<strong>诺南</strong>，目前就职于腾讯，是一名 JSer</p>
+  <p>Hey，我是<strong>Nolan</strong>是一名 Node.js 爱好者</p>
 
-  <p>wechat: sijiahao1993</p>
-<!-- 
+  <p>Github: <a sre="https://github.com/jiahao-si">https://github.com/jiahao-si</p>
+  <p>VX: RedNolan</p>
+  <!-- 
   <p>
     这是我的利用 <a href="https://pages.github.com/">GitHub Pages</a> 与
     <a href="http://jekyll.com.cn/">Jekyll</a> 搭建的 个人博客。我在GitHub主页<a
@@ -73,36 +74,36 @@ header-img: "img/post-bg-rwd.jpg"
 <!-- Handle Language Change -->
 <script type="text/javascript">
   // get nodes
-  var $zh = document.querySelector(".zh");
-  var $en = document.querySelector(".en");
-  var $select = document.querySelector("select");
+  var $zh = document.querySelector('.zh');
+  var $en = document.querySelector('.en');
+  var $select = document.querySelector('select');
 
   // bind hashchange event
-  window.addEventListener("hashchange", _render);
+  window.addEventListener('hashchange', _render);
 
   // handle render
   function _render() {
     var _hash = window.location.hash;
     // en
-    if (_hash == "#en") {
+    if (_hash == '#en') {
       $select.selectedIndex = 1;
-      $en.style.display = "block";
-      $zh.style.display = "none";
+      $en.style.display = 'block';
+      $zh.style.display = 'none';
       // zh by default
     } else {
       // not trigger onChange, otherwise cause a loop call.
       $select.selectedIndex = 0;
-      $zh.style.display = "block";
-      $en.style.display = "none";
+      $zh.style.display = 'block';
+      $en.style.display = 'none';
     }
   }
 
   // handle select change
   function onLanChange(index) {
     if (index == 0) {
-      window.location.hash = "#zh";
+      window.location.hash = '#zh';
     } else {
-      window.location.hash = "#en";
+      window.location.hash = '#en';
     }
   }
 
@@ -143,18 +144,18 @@ header-img: "img/post-bg-rwd.jpg"
 <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES * * */
-  var disqus_shortname = "{{site.disqus.username}}";
-  var disqus_identifier = "{{site.disqus.username}}/{{page.url}}";
-  var disqus_url = "{{site.url}}{{page.url}}";
+  var disqus_shortname = '{{site.disqus.username}}';
+  var disqus_identifier = '{{site.disqus.username}}/{{page.url}}';
+  var disqus_url = '{{site.url}}{{page.url}}';
 
-  (function() {
-    var dsq = document.createElement("script");
-    dsq.type = "text/javascript";
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (
-      document.getElementsByTagName("head")[0] ||
-      document.getElementsByTagName("body")[0]
+      document.getElementsByTagName('head')[0] ||
+      document.getElementsByTagName('body')[0]
     ).appendChild(dsq);
   })();
 </script>
