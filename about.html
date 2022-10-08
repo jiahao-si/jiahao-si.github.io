@@ -109,7 +109,10 @@ header-img: 'img/tag-bg-o.jpg'
     // // init
     // _render();
     // 隐藏下侧的个人介绍
-    var $ele = document.querySelector('.sidebar-container')
-    $ele.style.display = 'none';
+    setTimeout(()=> {
+      var $ele = document.querySelector('.sidebar-container')
+      $ele.style.display = 'none';
+    },1000)
+    
   </script>
 </div>
