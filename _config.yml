@@ -11,7 +11,7 @@ github_repo: 'https://github.com/jiahao-si/jiahao-si.github.io.git' # you code r
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: '不积跬步无以至千里'
+sidebar-about-description: '格物致知，长期主义'
 sidebar-avatar: /img/about-NOLAN-gentle.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # SNS settings
