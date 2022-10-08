@@ -7,7 +7,7 @@ author: nolan
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
-  - React
+  - react
   - frontend
 ---
 
@@ -50,6 +50,7 @@ tags:
     ```
 
 - 规模
+
   - 向上扩展
     - React 和 Vue 都提供了强大的路由和状态管理库。不同的是 React 将此交给社区维护，而 Vue 则是官方维护和核心库同步更新。
     - Vue Cli 貌似比 React Cli （create-react-app）更灵活；
@@ -62,6 +63,7 @@ tags:
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     ```
+
 - 原生渲染
   - React 有 React Native
   - Vue 和 Weex 合作，Weex 已支持 Vue 语法
