@@ -8,7 +8,6 @@ header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
   - 算法
-  - 读书笔记
 ---
 
 ## 数组
@@ -689,6 +688,7 @@ function qSort(list){
                 return val(n-1)
             }
         }
+
 - 贪心算法
 -       贪心算法总会选择当下的最优解，而不考虑这一次选择会不会对未来的选择造成影响。实现者希望作出的这一系列局部最优能带来最终的整体‘最优选择’
 
@@ -736,4 +736,3 @@ function qSort(list){
         }
 
 -       //贪心算法版
-

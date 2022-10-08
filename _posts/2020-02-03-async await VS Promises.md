@@ -8,7 +8,7 @@ header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
   - js
-  - frontend
+  - FE
 ---
 
 > 场景：啰嗦的妻子<BR/>
