@@ -43,7 +43,7 @@
 ```
 # Site settings
 title: BY Blog                    # 你的博客网站标题
-SEOTitle: Nolan的博客 | BY Blog		# SEO 标题
+SEOTitle: Nolan的博客 		# SEO 标题
 description: "Hey"	   	   # 随便说点，描述一下
 
 # SNS settings
