@@ -1,0 +1,10 @@
+{
+  "name": "jiahao.si",
+  "short_name": "jiahao.si",
+  "description": "A personal blog by engineer",
+  "background_color": "#fff",
+  "theme_color": "#000",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
