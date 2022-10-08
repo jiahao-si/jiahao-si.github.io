@@ -7,21 +7,23 @@ author: nolan
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
-  - 数据结构
   - 算法
   - 读书笔记
 ---
 
 ## 数组
-- JavaScript 是一种特殊的对象，用来表示偏移量的索引是该对象的属性，索引可能是整数，并在内部转换成字符串类型（JavaScrip 对象的属性名必须是字符串）。JavaScript中的数组只是一种特殊对象，所以效率没有其他语言的数据高。
-- 字符串生成数组：split 
+
+- JavaScript 是一种特殊的对象，用来表示偏移量的索引是该对象的属性，索引可能是整数，并在内部转换成字符串类型（JavaScrip 对象的属性名必须是字符串）。JavaScript 中的数组只是一种特殊对象，所以效率没有其他语言的数据高。
+- 字符串生成数组：split
 - 数组生成字符串：join \ toString
 - 改变数组：尾部（pop \ push）、头部（shift \ unshift）、排序（sort \ reverse）、从中间插入： splice(开始位置，0，待插入的元素)、从中间删除： splice(开始位置，需要删除的个数)
 - 迭代器方法：生成新数组的（map \ filter）不生成新数组的（ forEach \ every \ some \ reduce ）
 - 二维数组：按列访问时两层循环，内层循环对应列；按行访问时两层循环，内层循环对应行；
 
 ---
+
 ## 列表
+
 - 列表是一组有序的数据。每个列表中的数据项成为元素。
 
 ```
@@ -58,9 +60,11 @@ for(names.front(); names.hasNext(); names.next()){
 ```
 
 ---
+
 ## 栈
+
 - 后入先出 LIFO （last-in-first-out）
-- 入栈 push 出栈 pop 
+- 入栈 push 出栈 pop
 - 返回栈顶元素，而不删除 peek 方法
 
 ```
@@ -74,6 +78,7 @@ function Stack(){
     this.clear = () => this.top = 0;
 }
 ```
+
 - 栈的应用一： 回文（判断一个字符串是不是回文）从左往右将每个字母压入栈，连续弹出栈得到新的字符串进行比较；
 - 栈的应用二： 递归
 
@@ -98,7 +103,7 @@ function fact(n){
     }
     let product = 1;
     while(s.length() > 0 ){
-        product *= s.pop(); 
+        product *= s.pop();
     }
     return product;
 }
@@ -108,14 +113,15 @@ console.log(fact(5)) //120
 ```
 
 ---
+
 ## 队列
+
 - 先进先出 （First-In-First-Out, FIFO）
 - 入队 enqueue 「push」
-- 出队 dequeue  「shift」
+- 出队 dequeue 「shift」
 - 读取队头元素 front 「this.datastore[0]」
 - 读取队尾元素 back 「this.datastore[this.datastore.length - 1 ]」
 - 清空队列 clear 「this.datastore = [] 」
-
 
 ```
 function Queue() {
@@ -131,16 +137,16 @@ function Queue() {
     this.empty = () => this.datastore.length == 0;
 }
 ```
+
 ##### 应用
-- 舞伴分配   
-    
-    根据舞者的性别分别进入男性队列和女性队列，男队列和女性队列依次出队，搭配成舞伴；知道有一队列为空，则非空队列为等待跳舞的舞者；  
+
+- 舞伴分配
+
+  根据舞者的性别分别进入男性队列和女性队列，男队列和女性队列依次出队，搭配成舞伴；知道有一队列为空，则非空队列为等待跳舞的舞者；
 
 - 基数排序
-    
-    对于 0～99 的数字，基数排序将数据集扫描两次。第一次按个位上的数字进行排序，第二次按十位上的数字进行排序。    
-    需要十个队列，每个对应一个个位数字。将所有的队列保存在一个数组中，使用取余和除法操作决定个位和十位。并将数组加入到相应的队列，根据个位数对其重新排序，然后根据十位上的数值进行排序。
-
+  对于 0 ～ 99 的数字，基数排序将数据集扫描两次。第一次按个位上的数字进行排序，第二次按十位上的数字进行排序。  
+   需要十个队列，每个对应一个个位数字。将所有的队列保存在一个数组中，使用取余和除法操作决定个位和十位。并将数组加入到相应的队列，根据个位数对其重新排序，然后根据十位上的数值进行排序。
 
 ```
 function distribute(nums, queues, n, digit){
@@ -151,7 +157,7 @@ function distribute(nums, queues, n, digit){
             queues[Math.floor(nums[i) / 10].enqueue(nums[i])
         }
     }
-}   
+}
 
 function collect(queues, nums) {
     var i = 0;
@@ -160,7 +166,7 @@ function collect(queues, nums) {
             nums[i++] = queues[digit].dequeue();
         }
     }
-    
+
 }
 
 //主程序
@@ -181,10 +187,8 @@ console.log(nums.join(''))
 
 ```
 
-- 优先队列    
-    
-    对dequeue 方法重新定义，时期删除队列中拥有最高优先级的元素
-
+- 优先队列
+  对 dequeue 方法重新定义，时期删除队列中拥有最高优先级的元素
 
 ---
 
@@ -203,7 +207,7 @@ function Node(ele){
     this.next = null;
 }
 
-//LinkedList 
+//LinkedList
 function LList(){
     this.head = new Node('head');
     this.find = (item) => {
@@ -211,7 +215,7 @@ function LList(){
         while(current.ele != item){
             current = current.next;
         }
-        
+
         return current;
     };
     //在 item 后面插入 newEle
@@ -248,10 +252,12 @@ function LList(){
 ```
 
 #### 双向链表
+
 - 需要为 Node 类设置一个 previous 属性
 - insert 的时候要设置新节点的 previous，并指向该节点的前驱
 
 #### 循环链表
+
 - head.next = head;
 - 这种行为会传到至链表的每一个节点，构成循环链表
 
@@ -262,6 +268,7 @@ function LList(){
 - 字典是一种以键-值对形式存储数据对数据结构
 - Dictionary 类的基础是 Array 类，而不是 Object 类。主要是因为，JavaScript 中不能对对象对属性进行排序。
 - 例，[key1: 213, key2: 989]
+
 ```
 function Dictionary(){
     this.dataStore = new Array();
@@ -275,9 +282,10 @@ function Dictionary(){
             console.log(key + ' => ' + this.datastore[key])
         })
     }
-    
+
 }
 ```
+
 - Dictionary 类的辅助方法
 
 ```
@@ -286,7 +294,7 @@ function count (){
     for (var key in Object.keys(this.datastore)){
         ++n
     }
-    return n 
+    return n
 }
 
 //为什么不能用 length，因为当键的类型为字符串时，length 就不管用类
@@ -300,16 +308,18 @@ function count (){
         for (var key in Object.keys(this.datastore).sort()){
             console.log(key + ' => ' + this.datastore[key])
         }
-       
+
     }
 ```
 
 ---
+
 ## 散列
+
 - 散列是一种常见的数据存储技术
 - 散列表是基于数组进行设计的
 - 碰撞的概念：即使用一个高效的散列函数，仍会存在两个键映射成同一个值的可能。
-- 散列表的数组应该是多大？1.首先长度应该是一个质数   2.长度应该在100以上，常用 137
+- 散列表的数组应该是多大？1.首先长度应该是一个质数 2.长度应该在 100 以上，常用 137
 - 如何选择散列函数？1.简单：以数组的长度对键取余 2.优化：霍纳算法，每次乘以一个质数（常用 31）
 
 ```
@@ -320,7 +330,7 @@ function HashTable() {
         for (var i = 0;i < data.length; ++i){
             total += data.charCodeAt(i)
         }
-        
+
         return total % this.table.length;
     };
     this.put = (data) => {
@@ -337,22 +347,26 @@ function HashTable() {
             }
         }
     };
-    
+
     //霍纳算法
     this.betterHash = (data) => {
         var total = 0 ;
         var H = 37;
         for(var i = 0; i < data.length; ++i){
-            total = total * H + data.charCodeAt(i); 
+            total = total * H + data.charCodeAt(i);
         }
         return total% this.table.length;
     }
 }
 ```
+
 - 碰撞的处理：1. 开链法（每个散列后数组的元素都是一个数组） 2.线性探索法（碰撞后顺序往下查找下一个空的位置）
 - 如何选择？当数组的大小是待散列的数据的两倍及以上时，选择线性探测法，其余的选择开链法
+
 ---
+
 ## 集合
+
 - 无序、互异
 
 ```
@@ -368,10 +382,10 @@ function Set(){
         var pos = this.dataStore.indexOf(ele);
         if(pos > -1){
             this.dataStore.splice(pos,1);
-            
+
             return true;
         }
-        
+
         return false
     };
     //并集
@@ -393,7 +407,7 @@ function Set(){
                 unionSet.add(set1.dataStore[i])
             }
         }
-        
+
         return intersectSet;
     };
     //补集
@@ -404,19 +418,20 @@ function Set(){
                 differenceSet.add(set1.dataStore[i])
             }
         }
-        
+
         return differenceSet;
     }
-    
+
 }
 ```
 
 ---
+
 ## 二叉树与二叉查找树
+
 - 根节点、父节点、子节点、叶子节点
 - 层级（根节点为第 0 层）、路径（从一个节点到另一个节点的这一组边）
 - 二叉查找树，相对较小的值保存在左节点，较大的值保存在右节点。
-    
 
 ```
 function Node(data,left,right){
@@ -458,10 +473,11 @@ function BST() {
             }
         }
     };
-    
+
 }
 
 ```
+
 - 中序遍历：按节点上的值，以升序访问
 
 ```
@@ -486,7 +502,7 @@ function inOrder(node){
 }
 ```
 
-- 后序遍历：先访问叶子节点，从左子树到右子树，再到根节点    
+- 后序遍历：先访问叶子节点，从左子树到右子树，再到根节点
 
 ```
 function inOrder(node){
@@ -500,7 +516,6 @@ function inOrder(node){
 
 - 查找最小值和最大值
 
-
 ```
 function getMin() {
     var current = this.root;
@@ -512,7 +527,6 @@ function getMin() {
 ```
 
 - 查找指定值
-    
 
 ```
 function find (data){
@@ -529,22 +543,26 @@ function find (data){
     return null
 }
 ```
+
 - 二叉查找树的一个用途是记录一组数据集中数据出现的次数。
 
 ---
+
 ## 图和图算法
--   图由边的集合和顶点的集合组成。
--   图可以对显示中的很多系统建模，如交通流量建模、局域网和广域网建模。
--   表示顶点：
-       
+
+- 图由边的集合和顶点的集合组成。
+- 图可以对显示中的很多系统建模，如交通流量建模、局域网和广域网建模。
+- 表示顶点：
+
 ```
 function Vertex(label, wasVisited){
     this.label = label;
     this.wasVisited = wasVisited;
 }
 ```
--   表示边： 图的边的表示方法称为邻接表或者邻接表数组，将边存储为由顶点的相邻顶点组成的数组，并以此顶点作为索引
--   图
+
+- 表示边： 图的边的表示方法称为邻接表或者邻接表数组，将边存储为由顶点的相邻顶点组成的数组，并以此顶点作为索引
+- 图
 
 ```
 function Graph(v){
@@ -573,6 +591,7 @@ function Graph(v){
     }
 }
 ```
+
 - 图的搜索：深度优先搜索、广度优先搜索
 - 查找最短路径
 - 拓扑排序
@@ -580,13 +599,15 @@ function Graph(v){
 ---
 
 ## 排序算法
+
 ### 基本算法
+
 - 冒泡排序
 - 选择排序
 - 插入排序
 
-
 ### 高级算法
+
 - 希尔排序
 - 归并排序
 - 快速排序：分而治之，递归。
@@ -599,7 +620,7 @@ function qSort(list){
     var lesser = [];
     var greater = [];
     var pivot = list[0];
-    
+
     for(var i = 1; i < list.length; ++i){
         if(list[i] < pivot){
             lesser.push(list[i])
@@ -612,14 +633,15 @@ function qSort(list){
 ```
 
 ---
+
 ## 检索算法
 
--   顺序查找
--   二分查找：只适应于有序数据集
+- 顺序查找
+- 二分查找：只适应于有序数据集
 -       function binSearch(arr, data){
             let upperBound = arr.length - 1; //上边界
             let lowerBound = 0; //下边界
-            
+
             while(lowerBound <= upperBound){
                 let midPoint = (lowerBound + upperBound) / 2;
                 if(arr[midPoint] > data){
@@ -630,19 +652,19 @@ function qSort(list){
                     return midPoint;
                 }
             }
-        
+
         }
 
-
-
 ---
+
 ## 高级算法
--   动态规划
+
+- 动态规划
 -       使用递归虽然简洁，但是效率不高。动态规划是一种与递归相反的技术。递归从顶部开始将问题分解，来解决整个问题。动态规划从底部解决问题，
        将所有小问题解决掉，然后合并成一个整体解决方案。
 -       动态规划实例：计算斐波那契数列
-        
-        //递归函数版       
+
+        //递归函数版
         function recurFib(n){
             if(n < 2){
                 return n;
@@ -650,7 +672,7 @@ function qSort(list){
                 return recurFib(n-1) + recurFib(n-2)
             }
         }
-        //动态规划版       
+        //动态规划版
         function dynFib(n){
             var val = [];
             for(var i = 0; i<= n; ++i){
@@ -664,15 +686,11 @@ function qSort(list){
                 for(var i = 3; i <= n; ++i){
                     val(i) = val[i-1] + val[i-2];
                 }
-                return val(n-1) 
+                return val(n-1)
             }
         }
--   贪心算法
+- 贪心算法
 -       贪心算法总会选择当下的最优解，而不考虑这一次选择会不会对未来的选择造成影响。实现者希望作出的这一系列局部最优能带来最终的整体‘最优选择’
-
-
-
-
 
 - 背包问题
 -       保险箱有 5 件物品，尺寸分别是 3、4、7、8、9，价值分别是 4、5、10、11、13，且背包容积是 16。怎么选择能达到最大价值？
@@ -688,7 +706,7 @@ function qSort(list){
                 return max(value[n-1] + knapsack(capacity -size[n-1],size,value,n-1), knapsack(capacity,size,value,n-1) );
             }
         }
-        
+
         var value = [4,5,10,11,13];
         var size = [3,4,7,8,9];
         var capacity = 16;
@@ -712,12 +730,10 @@ function qSort(list){
                     }
                     console.log(K[i][w]);
                 }
-                
+
             }
             return K[n][capacity];
         }
 
-
-
 -       //贪心算法版
-        
+

@@ -7,14 +7,14 @@ author: nolan
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
-  - async
-  - promise
+  - js
   - frontend
 ---
 
 > 场景：啰嗦的妻子<BR/>
-  丈夫和妻子去看电影，排队时，妻子却说自己饿了，去便利店买东西；
--   Promise 实现
+> 丈夫和妻子去看电影，排队时，妻子却说自己饿了，去便利店买东西；
+
+- Promise 实现
 
 ```
 console.log('person1: show ticket')
@@ -55,7 +55,8 @@ console.log('person4: show ticket')
 console.log('person5: show ticket')
 
 ```
--   运行结果
+
+- 运行结果
 
 ```
 person1: show ticket
@@ -72,7 +73,7 @@ VM44:26 drink
 VM44:27 person3: show ticket
 ```
 
--   async await 实现
+- async await 实现
 
 ```
 
@@ -82,7 +83,7 @@ console.log('person2: show ticket')
 
 const getBread = new Promise((resolve,reject) => {
     setTimeout(()=>{
-        resolve('bread') 
+        resolve('bread')
     },1000)
 })
 
@@ -99,7 +100,7 @@ const getButter = async () => {
 
 const getDrink = new Promise((resolve,reject) => {
     setTimeout(()=>{
-        resolve('drink') 
+        resolve('drink')
     },1000)
 })
 
@@ -107,19 +108,19 @@ const getDrink = new Promise((resolve,reject) => {
 const goIn = async () => {
     console.log('husband: let go in')
     console.log('wife:no, i am hungry')
-    
+
     let bread = await getBread;
-    
+
     console.log(`husband: here is ${bread},let us go in`)
     console.log(`wife: no, i need some butter`)
-    
+
     let butter = await getButter()
-    
+
     console.log(`husband: here is ${butter},let us go in`)
     console.log(`wife: no, i need some drink`)
-    
+
     let drink = await getDrink
-    
+
     console.log(`husband: here is ${drink},let us go`)
     console.log('wife: all right')
 }
@@ -128,4 +129,3 @@ goIn();
 console.log('person4: show ticket')
 console.log('person5: show ticket')
 ```
-

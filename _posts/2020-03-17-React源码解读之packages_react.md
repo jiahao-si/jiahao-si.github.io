@@ -9,17 +9,18 @@ catalog: true
 tags:
   - js
   - React
-  - 源码解读
 ---
 
->   React 代码主要逻辑都是在 Packages 这个文件夹下，今天我们来解读下这个文件夹下的 React 目录。
+> React 代码主要逻辑都是在 Packages 这个文件夹下，今天我们来解读下这个文件夹下的 React 目录。
 
-###     React 
+### React
 
-####    位置
+#### 位置
+
 react.js
 
-####    输出接口
+#### 输出接口
+
 ```
 export {
   Children,
@@ -73,39 +74,41 @@ export {
 };
 ```
 
-###    react-element
+### react-element
 
-####    位置
+#### 位置
+
 ReactElement.js
 
-####    输出接口
-jsx 方法、createElement方法
+#### 输出接口
 
--   jsx 方法
+jsx 方法、createElement 方法
+
+- jsx 方法
 
 ```
     export function jsx(type, config, maybeKey) {
       let propName;
-    
+
       // Reserved names are extracted
       const props = {};
-    
+
       let key = null;
       let ref = null;
-    
-      
+
+
       if (maybeKey !== undefined) {
         key = '' + maybeKey;
       }
-    
+
       if (hasValidKey(config)) {
         key = '' + config.key;
       }
-    
+
       if (hasValidRef(config)) {
         ref = config.ref;
       }
-    
+
       // Remaining properties are added to a new props object
       for (propName in config) {
         if (
@@ -115,7 +118,7 @@ jsx 方法、createElement方法
           props[propName] = config[propName];
         }
       }
-    
+
       // Resolve default props
       if (type && type.defaultProps) {
         const defaultProps = type.defaultProps;
@@ -125,7 +128,7 @@ jsx 方法、createElement方法
           }
         }
       }
-    
+
       return ReactElement(
         type,
         key,
@@ -139,9 +142,8 @@ jsx 方法、createElement方法
 
 ```
 
--   createElement
-      
-    jsx 方法实质被转化成 createElement 方法
+- createElement
+  jsx 方法实质被转化成 createElement 方法
 
 ```
 export function createElement(type, config, children) {
@@ -175,7 +177,7 @@ export function createElement(type, config, children) {
       }
     }
   }
- 
+
   // children 可以是多个参数
   const childrenLength = arguments.length - 2;
   if (childrenLength === 1) {
@@ -185,7 +187,7 @@ export function createElement(type, config, children) {
     for (let i = 0; i < childrenLength; i++) {
       childArray[i] = arguments[i + 2];
     }
-   
+
     props.children = childArray;
   }
 
@@ -198,7 +200,7 @@ export function createElement(type, config, children) {
       }
     }
   }
-  
+
   return ReactElement(
     type,
     key,
@@ -212,7 +214,7 @@ export function createElement(type, config, children) {
 
 ```
 
--   jsx 方法和 createElement 方法实质返回到 react 对象
+- jsx 方法和 createElement 方法实质返回到 react 对象
 
 ```
 const ReactElement = function(type, key, ref, self, source, owner, props) {
@@ -236,16 +238,17 @@ const ReactElement = function(type, key, ref, self, source, owner, props) {
 };
 ```
 
-###    react-component
+### react-component
 
-####    位置
+#### 位置
+
 ReactBaseClasses.js
 
-####    输出接口
+#### 输出接口
+
 Component, PureComponent
 
--   Component
-
+- Component
 
 ```
 function Component(props, context, updater) {
@@ -261,7 +264,7 @@ function Component(props, context, updater) {
 Component.prototype.isReactComponent = {};
 
 Component.prototype.setState = function(partialState, callback) {
-  
+
   this.updater.enqueueSetState(this, partialState, callback, 'setState');
 };
 
@@ -271,8 +274,7 @@ Component.prototype.forceUpdate = function(callback) {
 
 ```
 
--   PureComponent
-
+- PureComponent
 
 ```
 function ComponentDummy() {}
@@ -296,9 +298,8 @@ Object.assign(pureComponentPrototype, Component.prototype);
 pureComponentPrototype.isPureReactComponent = true;
 ```
 
+### react-ref
 
-
-###    react-ref
 位置： ReactCreateRef.js
 
 ```
@@ -312,7 +313,7 @@ export function createRef(): RefObject {
 
 ```
 
-###    forward-ref
+### forward-ref
 
 位置：forwardRef.js
 
@@ -328,7 +329,6 @@ export default function forwardRef(render) {
 
 render 是一个函数组件，如可以这样使用
 
-
 ```
 const FuncCompWithRef = React.forwardRef((props,ref) => {
     return <input {...props} ref={ref} />
@@ -337,8 +337,7 @@ const FuncCompWithRef = React.forwardRef((props,ref) => {
 <FuncCompWithRef ref={this.state.data} />
 ```
 
-
-####    context
+#### context
 
 位置： ReactContext.js
 
@@ -346,7 +345,7 @@ const FuncCompWithRef = React.forwardRef((props,ref) => {
 export function createContext(defaultValue,calculateChangedBits) {
   if (calculateChangedBits === undefined) {
     calculateChangedBits = null;
-  } 
+  }
 
   const context = {
     $$typeof: REACT_CONTEXT_TYPE,

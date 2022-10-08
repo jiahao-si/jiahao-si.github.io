@@ -7,11 +7,8 @@ author: nolan
 header-img: img/post-bg-re-vs-ng2.jpg
 catalog: true
 tags:
-  - FileReader
   - js
 ---
-
-
 
 ### FileReader
 
@@ -19,48 +16,47 @@ FileReader 对象可以一步读取文件内容，使用 File 对象或 Blob 对
 
 File 对象：可以是 input 元素上选择文件后返回的 FileList 对象，也可以是来自拖放操作生成的 DataTransfer 对象， 还可以是来自在一个 HTMLCanvasElement 上执行 mozGetAsFile 方法后返回的结果。
 
-Blob 对象：表示一个不可变、原始数据的类文件对象，Blob 表示的不一定是JavaScript原生格式的数据。File 接口继承自 Blob 对象，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。Blob.size 表示包含数据大小（字节），Blob.type 表示该 Blob 对象的 Mime 类型。
+Blob 对象：表示一个不可变、原始数据的类文件对象，Blob 表示的不一定是 JavaScript 原生格式的数据。File 接口继承自 Blob 对象，继承了 blob 的功能并将其扩展使其支持用户系统上的文件。Blob.size 表示包含数据大小（字节），Blob.type 表示该 Blob 对象的 Mime 类型。
 
-####    属性
+#### 属性
 
--    FileReader.error
-        -    只读
-        -    读取文件错误时
--    FileReader.readyState
-        -   常量名为 EMPTY，值为 0， 还没有加载任何数据；
-        -   常量名为 LOADING，值为 1，数据正在加载；
-        -   常量名为 DONE，值为 2，已完成全部的读取请求；
--    FileReader.result
-        -   结果
-        -   只读    
-####    方法
+- FileReader.error
+  - 只读
+  - 读取文件错误时
+- FileReader.readyState
+  - 常量名为 EMPTY，值为 0， 还没有加载任何数据；
+  - 常量名为 LOADING，值为 1，数据正在加载；
+  - 常量名为 DONE，值为 2，已完成全部的读取请求；
+- FileReader.result
+  - 结果
+  - 只读
 
--   readAsText
-    -   常用来**读取 txt 文件**，一般会指定 utf-8 编码；
--   readAsDataURL
-    -   result属性中将包含一个data：**URL格式的Base64字符串**；
-    -   常用来**读取本地图片**并展示图片；
--   readAsBinaryString
-    -   result属性中将包含所读取文件的**原始二进制数据**；
-    -   如读取 excel 文件，并配合 xlsx 解析库解析；
--   readAsArrayBuffer
-    -   result 属性中保存的将是被读取文件**的 ArrayBuffer 数据对象**；
--   abort
-    -   结束读取
+#### 方法
 
-####    事件处理
+- readAsText
+  - 常用来**读取 txt 文件**，一般会指定 utf-8 编码；
+- readAsDataURL
+  - result 属性中将包含一个 data：**URL 格式的 Base64 字符串**；
+  - 常用来**读取本地图片**并展示图片；
+- readAsBinaryString
+  - result 属性中将包含所读取文件的**原始二进制数据**；
+  - 如读取 excel 文件，并配合 xlsx 解析库解析；
+- readAsArrayBuffer
+  - result 属性中保存的将是被读取文件**的 ArrayBuffer 数据对象**；
+- abort
+  - 结束读取
 
--   onabort 
--   onerror
--   onload
-    -   在读取操作完成时触发；
--   onloadstart
--   onloadend
-        -   处理loadend事件。该事件在读取操作结束时（要么成功，要么失败）触发；
--   onprogress
+#### 事件处理
 
+- onabort
+- onerror
+- onload
+  - 在读取操作完成时触发；
+- onloadstart
+- onloadend - 处理 loadend 事件。该事件在读取操作结束时（要么成功，要么失败）触发；
+- onprogress
 
-###     实战：基于 fileReader 和 xlsx 解析包解析 txt 和 excel 文件
+### 实战：基于 fileReader 和 xlsx 解析包解析 txt 和 excel 文件
 
 ```
 function ParseDataFromFile({ onUpload: Function }) {
